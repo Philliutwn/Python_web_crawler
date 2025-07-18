@@ -1,0 +1,2 @@
+# 忽略 macOS 的 DS_Store
+.DS_Store
