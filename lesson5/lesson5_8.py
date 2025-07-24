@@ -56,8 +56,10 @@ async def main():
             config = run_config
         )
 
-        datas = json.loads(result.extracted_content)
-        process_data(datas)
+        print(type(result.extracted_content))  # Check the type of result
+        print(result.extracted_content)
+        #datas = json.loads(result.extracted_content)
+        #process_data(datas)
 
 if __name__ == '__main__':
     asyncio.run(main())
