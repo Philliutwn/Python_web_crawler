@@ -5,11 +5,12 @@ async def main():
     #建立一個AsyncWebCrawler的實體
         async with AsyncWebCrawler() as crawler:
             # Run the crawler on a URL
-            result = await crawler.arun(url='https://crawl4ai.com')
+            #result = await crawler.arun(url='https://crawl4ai.com')
+            result = await crawler.arun(url='https://example.com')
             print(type(result))  # Check the type of result
             # Print the result
-            #print(result.markdown)
-            print(result.markdown[:200])
+            print(result.markdown)
+            #print(result.markdown[:200])
 
 if __name__ == '__main__':
     asyncio.run(main())

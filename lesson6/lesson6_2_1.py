@@ -7,8 +7,7 @@ from crawl4ai import (AsyncWebCrawler,
                       SemaphoreDispatcher,RateLimiter,
                       CrawlerMonitor,
                       DisplayMode)
-
-import jason
+import json
 
 async def get_stock_data(urls)-> list[dict]:
     
