@@ -10,7 +10,7 @@ headerLabel.pack()
 
 
 # left frame
-frame = tk.Frame(root,width=300, height=400,relief=tk.GROOVE,border=2, bg='black')
+frame = tk.Frame(root,width=200, height=400,relief=tk.GROOVE,border=2, bg='black')
 frame.pack_propagate(False)
 frame.pack(side=tk.LEFT,padx=10, pady=50)
 
@@ -21,7 +21,6 @@ listbox = tk.Listbox(frame, selectmode=tk.MULTIPLE, yscrollcommand=True)
 for item in lang:
     listbox.insert(tk.END, item)
 
-listbox.pack(side=tk.LEFT, padx=10)
 
 # scroller in left listbox
 scrollbar = tk.Scrollbar(frame)
@@ -34,7 +33,10 @@ selectedItem = tk.StringVar()
 selectedItem.set(listbox.curselection())
 print('selected item = ',selectedItem)
 lblSelItem = tk.Label(frame, text= "Selected stock", font=('Helvetica', 12),bg='yellow')
-lblSelItem.pack(side=tk.TOP, anchor='w',padx=10, pady=10)
+
+lblSelItem.pack(side=tk.TOP, padx=10, pady=10)
+listbox.pack(side=tk.TOP, padx=10)
+
 
 root.mainloop()
 
