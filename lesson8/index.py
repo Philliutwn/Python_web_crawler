@@ -58,7 +58,6 @@ class SimpleApp:
             display_text = f"{stock['code']} - {stock['name']}"
             self.stock_display_list.append(stock)  # 保留原始 dict
             self.stock_listbox.insert(tk.END, display_text)
-            self.stock_listbox.insert(tk.END, f"{stock['code']} - {stock['name']}")
             
         self.stock_listbox.pack(side=tk.LEFT)
         self.scrollbar.config(command=self.stock_listbox.yview)
@@ -73,6 +72,8 @@ class SimpleApp:
         root_right_frame.pack(side=tk.RIGHT, pady=10,padx=10,fill=tk.BOTH, expand=True)
         # 在右側顯示選取的股票資訊
         # 增加self.selected_button按鈕click功能
+        # self.selected_button按鈕被按下時，self.selected_button的state會變成tk.DISABLE，並立即即啟動一個新的thread來執行start_crawling方法
+        # start_crawling執行完成後，self.selected_button的state會變成tk.NORMAL
         self.selected_button = tk.Button(
             root_right_frame,
             text="選取的股票數量是0筆",
