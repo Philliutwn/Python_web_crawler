@@ -10,6 +10,8 @@ async def main():
             print(type(result))  # Check the type of result
             # Print the result
             print(result.markdown)
+            print('--------------')
+            print(result.html)
             #print(result.markdown[:200])
 
 if __name__ == '__main__':
